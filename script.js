@@ -355,7 +355,7 @@ function startLetterTyping() {
             letterCursorEl.classList.add('hide');
             
         }
-    }, 80);
+    }, 18);
 }
 
 
