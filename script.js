@@ -36,8 +36,8 @@ const CONFIG = {
         { src: 'images/photo1.jpg', caption: '' },
         { src: 'images/photo2.jpg', caption: '' },
         { src: 'images/photo3.jpg', caption: '' },
-        { src: 'images/photo4.jpg', caption: '' },
-        { src: 'images/photo5.jpg', caption: '' },
+        { src: 'images/photo4.JPG', caption: '' },
+        { src: 'images/photo5.JPG', caption: '' },
     ],
 };
 
