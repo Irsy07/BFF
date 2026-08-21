@@ -239,7 +239,7 @@ function startNoteTyping() {
             clearInterval(noteTypeTimer);
             noteSignatureEl.style.opacity = '1';
         }
-    }, 200);
+    }, 35);
 }
 
 function prepareOverlay(target) {
