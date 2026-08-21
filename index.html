@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
+<title>Untukmu 🌸</title>
+<meta name="description" content="Sebuah hadiah digital, dibuat dengan hati." />
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Alex+Brush&display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<div id="cursor-petal" class="cursor-petal" aria-hidden="true"></div>
+
+
+<main id="app">
+
+  <section id="screen-intro" class="screen screen--active" data-screen="intro">
+  <div class="intro-wrap">
+    <button id="intro-text" class="intro-text intro-text-btn" type="button" disabled></button>
+    <span id="intro-cursor" class="intro-cursor">|</span>
+  </div>
+</section>
+
+  <section id="screen-lock" class="screen" data-screen="lock">
+    <div class="lock-card glass" id="lock-card">
+      <div class="lock-logo">
+        <span class="lock-logo__flower">🌸</span>
+      </div>
+      <p class="eyebrow">sebuah persembahan kecil</p>
+      <h1 class="lock-title">Masukkan PIN</h1>
+      <p id="pin-hint" class="pin-hint"></p>
+      <p class="lock-sub">untuk membuka hadiah ini</p>
+
+      <div class="pin-dots" id="pin-dots" aria-hidden="true">
+        <span class="pin-dot"></span>
+        <span class="pin-dot"></span>
+        <span class="pin-dot"></span>
+        <span class="pin-dot"></span>
+      </div>
+
+      <input
+        id="pin-input"
+        class="pin-input-hidden"
+        type="tel"
+        inputmode="numeric"
+        pattern="[0-9]*"
+        maxlength="8"
+        autocomplete="off"
+        aria-label="Masukkan PIN"
+      />
+
+      <div class="pin-keypad" id="pin-keypad">
+        <button class="pin-key" data-key="1">1</button>
+        <button class="pin-key" data-key="2">2</button>
+        <button class="pin-key" data-key="3">3</button>
+        <button class="pin-key" data-key="4">4</button>
+        <button class="pin-key" data-key="5">5</button>
+        <button class="pin-key" data-key="6">6</button>
+        <button class="pin-key" data-key="7">7</button>
+        <button class="pin-key" data-key="8">8</button>
+        <button class="pin-key" data-key="9">9</button>
+        <button class="pin-key pin-key--ghost" data-key="hint" aria-label="petunjuk">
+          <i class="fa-regular fa-lightbulb"></i>
+        </button>
+        <button class="pin-key" data-key="0">0</button>
+        <button class="pin-key pin-key--ghost" data-key="del" aria-label="hapus">
+          <i class="fa-solid fa-delete-left"></i>
+        </button>
+      </div>
+
+      <button id="pin-submit" class="btn btn--primary lock-submit">
+        <span>Masuk</span>
+        <i class="fa-solid fa-arrow-right-long"></i>
+      </button>
+    </div>
+  </section>
+
+  
+  <section id="screen-welcome" class="screen" data-screen="welcome">
+    <div class="welcome-inner">
+      <p class="eyebrow eyebrow--reveal"></p>
+      <h1 class="welcome-title">
+        <span class="welcome-title__line">Happy Birthday</span>
+        <span id="welcome-name" class="welcome-title__name signature-font"></span>
+      </h1>
+      <p id="welcome-sub" class="welcome-sub"></p>
+      <button id="open-gift-btn" class="btn btn--primary btn--large open-gift-btn">
+        <span>Buka Kadonya</span>
+        <i class="fa-solid fa-gift"></i>
+      </button>
+    </div>
+  </section>
+
+ 
+  <section id="screen-menu" class="screen" data-screen="menu">
+    <header class="menu-header">
+      <p class="eyebrow">untuk,</p>
+      <h2 id="menu-title" class="menu-title"></h2>
+      <p class="menu-sub">satu satu yahh😊.</p>
+    </header>
+
+    <div class="menu-grid" id="menu-grid">
+      <button class="menu-card glass" data-target="note" style="--delay:0">
+        <span class="menu-card__icon">🌸</span>
+        <span class="menu-card__title">Brief Note</span>
+        <span class="menu-card__desc">untuk indahhh</span>
+      </button>
+
+      <button class="menu-card glass" data-target="voice" style="--delay:1">
+        <span class="menu-card__icon">🎤</span>
+        <span class="menu-card__title">Voice Note</span>
+        <span class="menu-card__desc">didenger yahh</span>
+      </button>
+
+      <button class="menu-card glass" data-target="letter" style="--delay:2">
+        <span class="menu-card__icon">📜</span>
+        <span class="menu-card__title">My Confession</span>
+        <span class="menu-card__desc">pelan pelan indahhh</span>
+      </button>
+
+      <button class="menu-card glass" data-target="gallery" style="--delay:3">
+        <span class="menu-card__icon">📸</span>
+        <span class="menu-card__title">Our Memory</span>
+        <span class="menu-card__desc">foto kitaaaa</span>
+      </button>
+
+      <button class="menu-card glass" data-target="cake" style="--delay:4">
+        <span class="menu-card__icon">🎂</span>
+        <span class="menu-card__title">Kuenyaaa</span>
+        <span class="menu-card__desc">kuenyaaa indahhh</span>
+      </button>
+
+      <button class="menu-card glass" data-target="bouquet" style="--delay:5">
+        <span class="menu-card__icon">💐</span>
+        <span class="menu-card__title">Last</span>
+        <span class="menu-card__desc">terakhir buat indahhh</span>
+      </button>
+    </div>
+  </section>
+
+  
+  <section id="screen-note" class="screen overlay" data-screen="note">
+    <button class="btn-back" data-back><i class="fa-solid fa-arrow-left"></i><span>Kembali</span></button>
+    <div class="note-wrap">
+      <div class="note-card glass" id="note-card">
+        <span class="note-card__pin">🌸</span>
+        <p id="note-text" class="note-text"></p>
+        <span id="note-signature" class="note-signature signature-font"></span>
+      </div>
+    </div>
+  </section>
+
+  
+  <section id="screen-voice" class="screen overlay" data-screen="voice">
+    <button class="btn-back" data-back><i class="fa-solid fa-arrow-left"></i><span>Kembali</span></button>
+    <div class="voice-wrap">
+      <h3 class="overlay-title">Voice Note</h3>
+      <p class="overlay-sub"></p>
+
+      <div class="voice-player glass">
+        <button id="voice-play" class="voice-play-btn">
+          <i class="fa-solid fa-play" id="voice-play-icon"></i>
+        </button>
+        <div class="voice-wave" id="voice-wave" aria-hidden="true"></div>
+        <div class="voice-meta">
+          <div class="voice-progress-track">
+            <div class="voice-progress-fill" id="voice-progress-fill"></div>
+          </div>
+          <div class="voice-time">
+            <span id="voice-current">0:00</span>
+            <span id="voice-duration">0:00</span>
+          </div>
+        </div>
+      </div>
+      <audio id="voice-audio" src="music/voice.mp3" preload="metadata"></audio>
+    </div>
+  </section>
+
+  <section id="screen-letter" class="screen overlay" data-screen="letter">
+    <button class="btn-back" data-back><i class="fa-solid fa-arrow-left"></i><span>Kembali</span></button>
+    <div class="letter-wrap">
+      <div class="scroll-letter" id="scroll-letter">
+        <div class="scroll-rod scroll-rod--top"></div>
+        <div class="scroll-paper">
+          <p id="letter-text" class="letter-text"></p>
+          <span id="letter-cursor" class="letter-cursor">|</span>
+        </div>
+        <div class="scroll-rod scroll-rod--bottom"></div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section id="screen-gallery" class="screen overlay" data-screen="gallery">
+    <button class="btn-back" data-back><i class="fa-solid fa-arrow-left"></i><span>Kembali</span></button>
+    <div class="gallery-wrap">
+      <h3 class="overlay-title">Our Memory</h3>
+      <div class="carousel" id="carousel">
+        <button class="carousel-arrow carousel-arrow--left" id="carousel-prev" aria-label="sebelumnya">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <div class="carousel-track-wrap">
+          <ul class="carousel-track" id="carousel-track"></ul>
+        </div>
+        <button class="carousel-arrow carousel-arrow--right" id="carousel-next" aria-label="berikutnya">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+      <div class="carousel-dots" id="carousel-dots"></div>
+    </div>
+
+    <div class="lightbox" id="lightbox">
+      <button class="lightbox-close" id="lightbox-close"><i class="fa-solid fa-xmark"></i></button>
+      <img id="lightbox-img" class="lightbox-img" src="" alt="Our Memory diperbesar" />
+    </div>
+  </section>
+
+  
+  <section id="screen-cake" class="screen overlay" data-screen="cake">
+    <button class="btn-back" data-back><i class="fa-solid fa-arrow-left"></i><span>Kembali</span></button>
+    <div class="cake-wrap">
+      <p class="overlay-sub" id="cake-hint">tiup lilinnyaaa</p>
+      <div class="cake-scene">
+        <div class="cake-table"></div>
+        <div class="cake" id="cake">
+          <div class="candle" id="candle">
+            <div class="flame" id="flame"></div>
+            <div class="smoke" id="smoke"></div>
+            <div class="wick"></div>
+          </div>
+          <div class="cake-tier cake-tier--top">
+            <span class="frosting-dot"></span><span class="frosting-dot"></span><span class="frosting-dot"></span>
+          </div>
+          <div class="cake-tier cake-tier--bottom"></div>
+          <div class="cake-plate"></div>
+        </div>
+        <div class="balloons" id="balloons" aria-hidden="true"></div>
+      </div>
+      <h2 id="cake-cheer" class="cake-cheer">Hore!!</h2>
+    </div>
+  </section>
+
+  
+  <section id="screen-bouquet" class="screen overlay" data-screen="bouquet">
+    <button class="btn-back" data-back><i class="fa-solid fa-arrow-left"></i><span>Kembali</span></button>
+    <div class="bouquet-wrap">
+      <p class="overlay-sub">sentuh bunganya</p>
+      <button class="bouquet" id="bouquet-btn" aria-label="buka bouquet">
+        <img class="bouquet__img" src="images/bouquet.png" alt="Buket bunga" />
+      </button>
+      <p id="bouquet-message" class="bouquet-message"></p>
+    </div>
+  </section>
+
+  
+  <section id="screen-closing" class="screen" data-screen="closing">
+    <div class="closing-inner">
+      <h2 class="closing-title signature-font">Happy Birthday</h2>
+      <div id="closing-lines" class="closing-lines"></div>
+      <button id="restart-btn" class="btn btn--ghost closing-restart">
+        <i class="fa-solid fa-rotate-left"></i>
+        <span>Kembali</span>
+      </button>
+    </div>
+  </section>
+
+</main>
+<div id="screen-transition" class="screen-transition" aria-hidden="true"></div>
+<div class="ambient" aria-hidden="true">
+  <div class="ambient__gradient"></div>
+  <div id="hearts-layer" class="floaters-layer"></div>
+  <div id="sparkle-layer" class="floaters-layer"></div>
+  <div class="grain"></div>
+</div>
+
+
+<div id="music-player" class="music-player glass">
+  <button id="music-toggle" class="music-toggle" aria-label="putar musik">
+    <i class="fa-solid fa-play" id="music-icon"></i>
+  </button>
+  <div class="music-info">
+    <div class="music-disc" id="music-disc"></div>
+    <div class="music-meta">
+      <span id="music-title" class="music-title"></span>
+      <div class="music-progress-track" id="music-progress-track">
+        <div class="music-progress-fill" id="music-progress-fill"></div>
+      </div>
+    </div>
+  </div>
+  <div class="music-volume">
+    <i class="fa-solid fa-volume-high"></i>
+    <input type="range" id="music-volume" min="0" max="1" step="0.01" value="0.6" aria-label="volume" />
+  </div>
+</div>
+<audio id="bg-audio" src="music/bg.mp3" preload="metadata" loop></audio>
+
+<canvas id="sakura-canvas" class="sakura-canvas-front" aria-hidden="true"></canvas>
+<canvas id="confetti-canvas" class="confetti-canvas" aria-hidden="true"></canvas>
+
+<script src="script.js"></script>
+</body>
+</html>
