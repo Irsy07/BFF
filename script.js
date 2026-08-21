@@ -239,7 +239,7 @@ function startNoteTyping() {
             clearInterval(noteTypeTimer);
             noteSignatureEl.style.opacity = '1';
         }
-    }, 40);
+    }, 200);
 }
 
 function prepareOverlay(target) {
@@ -595,7 +595,6 @@ function makePetal() {
     };
 }
 
-// ✅ INI YANG KEMUNGKINAN HILANG — wajib ada setelah makePetal didefinisikan
 const PETAL_COUNT = window.innerWidth < 700 ? 16 : 26;
 for (let i = 0; i < PETAL_COUNT; i++) {
     const p = makePetal();
@@ -666,7 +665,6 @@ function animateSakura() {
     requestAnimationFrame(animateSakura);
 }
 
-// ✅ INI JUGA WAJIB ADA — tanpa ini animasinya tidak pernah mulai
 requestAnimationFrame(animateSakura);
 
 document.addEventListener('visibilitychange', () => {
